@@ -1,0 +1,29 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="redux-store.html">
+
+
+<dom-module id="todo-counter">
+  <template>
+    <h3>You have [[todoCount]] todos!</h3>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'todo-counter',
+      behaviors: [ ReduxBehavior ],
+      properties: {
+        todos: {
+          type: Array,
+          statePath: 'todos'
+        },
+        todoCount: {
+          type: Number,
+          computed: 'computeFriendCount(todos)'
+        }
+      },
+      computeFriendCount: function(todos) {
+        return todos.length;
+      }
+    });
+  </script>
+</dom-module>

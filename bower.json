@@ -1,0 +1,22 @@
+{
+  "name": "polymer-redux-app",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "George <georgeserbanescu@hotmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer-redux": "^0.4.0",
+    "polymer": "^1.8.1"
+  }
+}

@@ -1,0 +1,33 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="redux-store.html">
+
+<dom-module id="todo-input">
+  <template>
+    
+    <input id="field" type="text">
+    <button on-tap="addFriend">Add TODO</button>
+    
+  </template>
+  <script>
+    Polymer({
+      is: 'todo-input',
+      behaviors: [ ReduxBehavior ],
+      actions: {
+        add: function(name) {
+          return {
+            type: 'ADD_TODO',
+            todo: name
+          }
+        }
+      },
+      addFriend: function() {
+        const field = this.$.field;
+        if  (field.value) {
+          this.dispatch('add', field.value);
+          field.value = null;
+          field.focus();
+        }
+      }
+    });
+  </script>
+</dom-module>

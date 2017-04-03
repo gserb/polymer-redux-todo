@@ -1,0 +1,21 @@
+<link rel="import" href="bower_components/polymer-redux/polymer-redux.html">
+
+<script>
+  const initialState = {
+    todos: ['Order a Tesla Model S']
+  };
+  
+  const reducer = (state, action) => {
+    if (!state) return initialState;
+    switch (action.type){
+      case 'ADD_TODO':
+        const todos = state.todos.slice(0);
+        todos.push(action.todo);
+        return Object.assign({}, state, { todos: todos });
+    }
+  };
+
+  const store = Redux.createStore(reducer);
+  const ReduxBehavior = PolymerRedux(store);
+  
+</script>

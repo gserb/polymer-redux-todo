@@ -1,0 +1,15 @@
+{
+  "name": "polymer-redux-app",
+  "version": "1.0.0",
+  "description": "Simple polymer redux app",
+  "main": "index.html",
+  "dependencies": {
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
