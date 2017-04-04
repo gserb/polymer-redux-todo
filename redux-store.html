@@ -1,6 +1,8 @@
 <link rel="import" href="bower_components/polymer-redux/polymer-redux.html">
+<script src="util/logger.js"></script>
 
 <script>
+
   const initialState = {
     todos: ['Order a Tesla Model S']
   };
@@ -20,7 +22,7 @@
     }
   };
 
-  const store = Redux.createStore(reducer);
+  const store = Redux.createStore(reducer, Redux.applyMiddleware(LoggerMiddleware()));
   const ReduxBehavior = PolymerRedux(store);
   
 </script>

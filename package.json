@@ -4,7 +4,8 @@
   "description": "Simple polymer redux app",
   "main": "index.html",
   "dependencies": {
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-logger": "^3.0.1"
   },
   "devDependencies": {},
   "scripts": {
