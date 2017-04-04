@@ -1,4 +1,5 @@
 <link rel="import" href="bower_components/polymer-redux/polymer-redux.html">
+<script src="middleware/logger.js"></script>
 
 <script>
   const initialState = {
@@ -15,7 +16,7 @@
     }
   };
 
-  const store = Redux.createStore(reducer);
+    const store = Redux.createStore(reducer, Redux.applyMiddleware(LoggerMiddleware()));
   const ReduxBehavior = PolymerRedux(store);
   
 </script>
