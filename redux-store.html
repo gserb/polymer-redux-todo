@@ -6,11 +6,16 @@
   };
   
   const reducer = (state, action) => {
+    var todos = undefined;
     if (!state) return initialState;
     switch (action.type){
       case 'ADD_TODO':
-        const todos = state.todos.slice(0);
+        todos = state.todos.slice(0);
         todos.push(action.todo);
+        return Object.assign({}, state, { todos: todos });
+      case 'REMOVE_TODO':
+        todos = state.todos.slice(0);
+        todos.splice(todos.indexOf(action.todo), 1);
         return Object.assign({}, state, { todos: todos });
     }
   };

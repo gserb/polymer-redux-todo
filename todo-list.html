@@ -6,7 +6,7 @@
   <template>
     <ul>
       <template is="dom-repeat" items="[[todos]]" as="todo">
-        <li>[[todo]]</li>
+        <li on-tap="removeTodo">[[todo]]</li>
       </template> 
     </ul>
   </template>
@@ -19,6 +19,20 @@
           type: Array,
           statePath: 'todos'
         }
+      },
+      actions: {
+        remove: function(name) {
+          return {
+            type: 'REMOVE_TODO',
+            todo: name
+          }
+        }
+      },
+      removeTodo: function(data) {
+        const field = data.target;
+    
+        this.dispatch('remove', field.innerText);
+        
       }
     });
   </script>

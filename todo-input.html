@@ -5,7 +5,7 @@
   <template>
     
     <input id="field" type="text">
-    <button on-tap="addFriend">Add TODO</button>
+    <button on-tap="addTodo">Add TODO</button>
     
   </template>
   <script>
@@ -18,9 +18,15 @@
             type: 'ADD_TODO',
             todo: name
           }
+        },
+        remove: function(name) {
+          return {
+            type: 'REMOVE_TODO',
+            todo: name
+          }
         }
       },
-      addFriend: function() {
+      addTodo: function() {
         const field = this.$.field;
         if  (field.value) {
           this.dispatch('add', field.value);
