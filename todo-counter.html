@@ -18,10 +18,10 @@
         },
         todoCount: {
           type: Number,
-          computed: 'computeFriendCount(todos)'
+          computed: 'computeTodoCount(todos)'
         }
       },
-      computeFriendCount: function(todos) {
+      computeTodoCount: function(todos) {
         return todos.length;
       }
     });
