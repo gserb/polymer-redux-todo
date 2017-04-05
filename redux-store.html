@@ -7,10 +7,11 @@
   };
   
   const reducer = (state, action) => {
+    var todos = undefined;
     if (!state) return initialState;
     switch (action.type){
       case 'ADD_TODO':
-        const todos = state.todos.slice(0);
+        todos = state.todos.slice(0);  // array returned by slice(0) is identical to the input, which basically means it's a chep way to duplicate an array
         todos.push(action.todo);
         return Object.assign({}, state, { todos: todos });
     }
